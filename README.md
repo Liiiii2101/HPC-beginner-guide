@@ -1,6 +1,6 @@
-#This is very general HPC manual for begnners
+# This is very general HPC manual for begnners
 
-##miniconda
+## miniconda
 Generally, you have to install miniconda in your home directory to create your own virtual environment
 ```sh
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -8,7 +8,7 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b 
 
 ```
-##exit the terminal and open again
+## exit the terminal and open again
 
 ```sh
 
@@ -18,21 +18,21 @@ conda --version
 
 
 
-##create new virtual enviroment
+## create new virtual enviroment
 
 ```sh
 conda create -n myenv python=3.10
 ```
 
 
-##if you have some old envs and you want to clone it here
+## if you have some old envs and you want to clone it here
 
 ```sh
 conda create —-prefix /source/envs —clone /home/user/
 ```
 
 
-##creating job script for HPC
+## creating job script for HPC
 
 ```sh
 #!/bin/bash
@@ -47,7 +47,7 @@ conda create —-prefix /source/envs —clone /home/user/
 #SBATCH -e ~/job_logs/train_%A_%a.err
 
 
-#Set environmnet variables
+# Set environmnet variables
 export RESULTS_FOLDER="/projects/user/"
 
 # Activate conda environment
@@ -57,7 +57,7 @@ source /home/USERNAME/miniconda3/bin/activate myenv
 
 ``` 
 
-##run interactive jobs
+## run interactive jobs
 ```sh
 srun --job-name=interactive_job \
      --output=interactive_job_%j.out \
@@ -71,10 +71,10 @@ srun --job-name=interactive_job \
 ```
 
 
-##if you sbatch a job script and run a job in a certain node, you should be able to interactive ssh the node
+## if you sbatch a job script and run a job in a certain node, you should be able to interactive ssh the node
 
 ```sh
 ssh node
 ```
 
-##common Q&A
+## common Q&A
