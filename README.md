@@ -1,4 +1,4 @@
-# This is very general HPC manual for begnners
+# This is very general HPC manual for beginners
 
 ## miniconda
 Generally, you have to install miniconda in your home directory to create your own virtual environment
